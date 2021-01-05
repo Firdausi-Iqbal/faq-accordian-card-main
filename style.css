@@ -1,0 +1,197 @@
+:root {
+  /* Text */
+  --Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+  --Softred: hsl(14, 88%, 65%);
+  /* Background gradient: */
+  --Softviolet: hsl(273, 75%, 66%);
+  --Softblue: hsl(240, 73%, 65%);
+  /* Text */
+  --Verydarkgrayishblue: hsl(237, 12%, 33%);
+  --Darkgrayishblue: hsl(240, 6%, 50%);
+  /* Dividers */
+  --Lightgrayishblue: hsl(240, 5%, 91%);
+}
+
+/* global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(var(--Softviolet), var(--Softblue));
+  background-repeat: no-repeat;
+  color: var(--Verydarkdesaturatedblue);
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  min-height: 100vh;
+}
+
+/* container */
+.outer-container {
+  padding: 7.5rem 15rem 2.5rem;
+}
+
+.inner-container {
+  background: url("images/illustration-woman-online-desktop.svg") no-repeat, url("images/bg-pattern-desktop.svg") no-repeat;
+  background-color: #FFF;
+  background-origin: padding-box, initial;
+  background-position: -15% 50%, -40% 50%;
+  background-size: 500px 400px, 600px 800px;
+  border-radius: 25px;
+  display: flex;
+  padding: 5em 7.5em;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.right {
+  margin: 0 0 0 5em;
+  width: 50%;
+}
+
+/* left content */
+.box-ilu {
+  animation: MoveUpDown 1s linear infinite;
+  margin: 30% auto auto -50%;
+  position: relative;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* right content */
+button {
+  background-color: #FFF;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: 0.3s;
+  text-align: left;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0 auto 1em;
+}
+
+hr {
+  border: 1px;
+  border-style: solid none none;
+  color: var(--Lightgrayishblue);
+  margin: 1em auto 1.5em;
+}
+
+.panel {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0.5em auto 0;
+  max-height: 0;
+  opacity: 0.75;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* Accordion */
+.accordion:hover {
+  color: var(--Softred);
+}
+
+.active {
+  font-weight: 700;
+}
+
+.active:after {
+  content: url("images/icon-arrow-down.svg");
+  float: right;
+  transform: rotate(180deg);
+}
+
+.accordion::after {
+  content: url("images/icon-arrow-down.svg");
+  float: right;
+}
+
+/* credit */
+.attribution {
+  font-size: 11px;
+  margin: 7.5em auto auto;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1024px) {
+
+  /* container */
+  .outer-container {
+    padding: 20% 10% 2.5%;
+  }
+
+  .inner-container {
+    background: url("images/bg-pattern-mobile.svg") no-repeat;
+    background-color: #FFF;
+    background-position: 50% 2.5%;
+    background-size: 60% auto;
+    border-radius: 25px;
+    flex-direction: column;
+    padding: 10%;
+  }
+
+  /* content */
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    margin: 0;
+    width: 100%;
+  }
+
+  .box-ilu {
+    animation: MoveUpDown 1s linear infinite;
+    margin: -35% auto 7.5% 5%;
+    position: relative;
+    width: 80%;
+  }
+
+  @keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 426px) {
+  .inner-container {
+    background: url("images/bg-pattern-mobile.svg") no-repeat;
+    background-color: #FFF;
+    background-position: 50% 2%;
+    background-size: 60% auto;
+  }
+}
